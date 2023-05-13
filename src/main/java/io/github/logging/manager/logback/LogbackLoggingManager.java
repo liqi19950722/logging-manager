@@ -17,7 +17,7 @@ public class LogbackLoggingManager implements LoggingManager {
     }
 
     public static LogbackLoggingManager createLogbackLoggingManager(ClassLoader classLoader) {
-        return new LogbackLoggingManager(classLoader, null);
+        return new LogbackLoggingManager(classLoader, new LogbackLoggingFilterFactory());
     }
 
     public static LogbackLoggingManager createLogbackLoggingManager(ClassLoader classLoader, LogbackLoggingFilterFactory loggingFilterFactory) {

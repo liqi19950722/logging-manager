@@ -8,6 +8,6 @@ import java.util.List;
 public class LogbackLoggingFilterFactory implements LoggingFilterFactory<LoggingManagerTurboFilter> {
     @Override
     public List<LoggingManagerTurboFilter> createFilterForm(String location) {
-        return null;
+        return List.of();
     }
 }

@@ -13,7 +13,7 @@ public interface LoggingManager {
         throw new IllegalStateException("No suitable logging system located");
     }
 
-    private static boolean isPresent(ClassLoader classLoader, String className) {
+    static boolean isPresent(ClassLoader classLoader, String className) {
         try {
             Class.forName(className, false, classLoader);
             return true;

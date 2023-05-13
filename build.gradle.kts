@@ -18,19 +18,25 @@ val spike = sourceSets.create("spike") {
 dependencies {
     implementation(platform("org.junit:junit-bom:5.9.3"))
     implementation(platform("org.mockito:mockito-bom:5.3.1"))
+
     "spikeImplementation"(platform("org.junit:junit-bom:5.9.3"))
     "spikeImplementation"(platform("org.mockito:mockito-bom:5.3.1"))
 }
 
 dependencies.constraints {
     implementation("ch.qos.logback:logback-classic:1.4.7")
+    implementation("jakarta.servlet:jakarta.servlet-api:6.0.0")
+
     add("spikeImplementation","ch.qos.logback:logback-classic:1.4.7")
 }
 
 dependencies {
     implementation("ch.qos.logback:logback-classic")
+    implementation("jakarta.servlet:jakarta.servlet-api")
+
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.mockito:mockito-core")
+
     "spikeImplementation"("ch.qos.logback:logback-classic")
     "spikeImplementation"("org.junit.jupiter:junit-jupiter")
     "spikeImplementation"("org.mockito:mockito-core")
