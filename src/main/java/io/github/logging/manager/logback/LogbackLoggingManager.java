@@ -9,7 +9,7 @@ public class LogbackLoggingManager implements LoggingManager {
 
     private final ClassLoader classLoader;
 
-    private LogbackLoggingFilterFactory loggingFilterFactory;
+    private final LogbackLoggingFilterFactory loggingFilterFactory;
 
     private LogbackLoggingManager(ClassLoader classLoader, LogbackLoggingFilterFactory loggingFilterFactory) {
         this.classLoader = classLoader;
@@ -38,6 +38,14 @@ public class LogbackLoggingManager implements LoggingManager {
             });
 
             loggerContext.addListener(listener);
+            isInitialized = true;
         }
+    }
+
+    private boolean isInitialized = false;
+
+    @Override
+    public boolean isInitialized() {
+        return isInitialized;
     }
 }

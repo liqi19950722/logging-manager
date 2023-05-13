@@ -1,7 +1,6 @@
 package io.github.logging.manager.logback;
 
 import ch.qos.logback.classic.LoggerContext;
-import io.github.logging.manager.LoggingFilterFactory;
 import io.github.logging.manager.LoggingManager;
 import io.github.logging.manager.logback.context.LoggingManagerLogbackContextListener;
 import io.github.logging.manager.logback.context.LoggingManagerTurboFilter;
@@ -37,12 +36,17 @@ public class LogbackLoggingManagerTest {
     }
 
     @Test
-    public void should_create_LogbackLoggingManager_by_class_loader() throws Exception {
+    public void should_create_LogbackLoggingManager_by_class_loader() {
         var loggingManager = LoggingManager.get(getClass().getClassLoader());
         Assertions.assertNotNull(loggingManager);
         Assertions.assertInstanceOf(LogbackLoggingManager.class, loggingManager);
     }
 
+    @Test
+    public void should_initialize() {
+        loggingManager.initialize("");
+        assertTrue(loggingManager.isInitialized());
+    }
     @Test
     public void should_initialize_TurboFilter_into_LogContext() {
         loggingManager.initialize("");

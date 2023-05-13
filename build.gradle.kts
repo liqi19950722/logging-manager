@@ -35,10 +35,12 @@ dependencies {
     implementation("ch.qos.logback:logback-classic")
     implementation("jakarta.servlet:jakarta.servlet-api")
     implementation("org.springframework:spring-context")
+    implementation("org.springframework.boot:spring-boot")
 
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.mockito:mockito-core")
     testImplementation("org.springframework:spring-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     "spikeImplementation"("ch.qos.logback:logback-classic")
     "spikeImplementation"("org.junit.jupiter:junit-jupiter")

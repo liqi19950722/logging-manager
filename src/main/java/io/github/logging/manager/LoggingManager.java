@@ -6,6 +6,8 @@ public interface LoggingManager {
 
     void initialize(String configLocation);
 
+    boolean isInitialized();
+
     static LoggingManager get(ClassLoader classLoader) {
         if (isPresent(classLoader, "ch.qos.logback.classic.LoggerContext")) {
             return LogbackLoggingManager.createLogbackLoggingManager(classLoader);

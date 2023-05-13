@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringJUnitConfig(
         initializers = {LoggingManagerApplicationContextInitializer.class}
 )
-public class SpringApplicationContextTest {
+public class SpringApplicationTest {
 
     @Autowired
     private ApplicationContext applicationContext;
