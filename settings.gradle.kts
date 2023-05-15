@@ -1,4 +1,4 @@
-rootProject.name = "logging-manager"
+rootProject.name = "logging-manager-project"
 
 pluginManagement {
     repositories.gradlePluginPortal()
@@ -7,3 +7,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories.mavenCentral()
 }
+
+includeBuild("spike")
+includeBuild("logging-manager")
+includeBuild("logging-manager-integration")
